@@ -16,10 +16,11 @@ export const Header = () => {
         <Link to={"/"}>Contacto</Link>
       </nav>
       <div  className='flex justify-between gap-10 items-center'>
-        <img src={account} alt="" />
         <img src={search} alt="" />
         <img src={heart} alt="" />
         <img src={cart} alt="" />
+        <Link to={"/login"}> <img src={account} alt="" /></Link>
+       
       </div>
     </header>
   )
