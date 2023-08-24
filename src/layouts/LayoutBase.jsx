@@ -1,7 +1,12 @@
 import React from 'react'
+import { Header } from '../components/Header'
 
-export const LayoutBase = () => {
+
+export const LayoutBase = ({children}) => {
   return (
-    <div>LayoutBase</div>
+    <>    
+    <Header/>
+    {children}
+    </>
   )
 }

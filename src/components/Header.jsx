@@ -10,7 +10,7 @@ export const Header = () => {
       <h1>Ecommerce</h1>
       <nav className='flex justify-between gap-10'>
         <div>Inicio</div>
-        <div>Comprar</div>
+        <div>Tienda</div>
         <div>Acerca De</div>
         <div>Contacto</div>
       </nav>
