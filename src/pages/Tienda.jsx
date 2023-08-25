@@ -4,12 +4,12 @@ import { useProductos } from '../hooks/useProductos'
 import { TiendaList } from '../components/Tienda/TiendaList'
 
 export const Tienda = () => {
-  const {id} = useParams()
+  const { id } = useParams()
   console.log(id)
-  const {productos} = useProductos({id})
+  const { productos } = useProductos({ id, type: "getAll" })
   return (
-    <main className='p-5'> 
-      <TiendaList productos={productos}/>
+    <main className='p-5'>
+      <TiendaList productos={productos} />
 
     </main>
   )
