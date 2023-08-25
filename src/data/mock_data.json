@@ -5,6 +5,7 @@
       "nombre": "Piso laminado roble",
       "imagen": "https://picsum.photos/id/1/300/200",
       "precio": 99.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -19,6 +20,7 @@
       "nombre": "Piso vinílico gris",
       "imagen": "https://picsum.photos/id/2/300/200",
       "precio": 49.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -33,6 +35,7 @@
       "nombre": "Piso de madera natural",
       "imagen": "https://picsum.photos/id/3/300/200",
       "precio": 149.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -47,6 +50,7 @@
       "nombre": "Piso vinílico beige",
       "imagen": "https://picsum.photos/id/4/300/200",
       "precio": 54.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -61,6 +65,7 @@
       "nombre": "Piso laminado nogal",
       "imagen": "https://picsum.photos/id/5/300/200",
       "precio": 89.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -75,6 +80,7 @@
       "nombre": "Piso de madera fresno",
       "imagen": "https://picsum.photos/id/6/300/200",
       "precio": 129.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -89,6 +95,7 @@
       "nombre": "Piso vinílico blanco",
       "imagen": "https://picsum.photos/id/7/300/200",
       "precio": 79.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -103,6 +110,7 @@
       "nombre": "Piso laminado cerezo",
       "imagen": "https://picsum.photos/id/8/300/200",
       "precio": 79.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -117,6 +125,7 @@
       "nombre": "Piso vinílico negro",
       "imagen": "https://picsum.photos/id/9/300/200",
       "precio": 59.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -131,6 +140,7 @@
       "nombre": "Piso de madera nogal",
       "imagen": "https://picsum.photos/id/10/300/200",
       "precio": 139.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -145,6 +155,7 @@
       "nombre": "Piso laminado arce",
       "imagen": "https://picsum.photos/id/11/300/200",
       "precio": 69.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -159,6 +170,7 @@
       "nombre": "Piso vinílico marrón",
       "imagen": "https://picsum.photos/id/12/300/200",
       "precio": 64.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -173,6 +185,7 @@
       "nombre": "Piso de madera caoba",
       "imagen": "https://picsum.photos/id/13/300/200",
       "precio": 149.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -187,6 +200,7 @@
       "nombre": "Piso laminado abedul",
       "imagen": "https://picsum.photos/id/14/300/200",
       "precio": 89.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -201,6 +215,7 @@
       "nombre": "Piso vinílico azul",
       "imagen": "https://picsum.photos/id/15/300/200",
       "precio": 54.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -215,6 +230,7 @@
       "nombre": "Piso de madera roble envejecido",
       "imagen": "https://picsum.photos/id/16/300/200",
       "precio": 139.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -229,6 +245,7 @@
       "nombre": "Piso vinílico crema",
       "imagen": "https://picsum.photos/id/17/300/200",
       "precio": 59.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -243,6 +260,7 @@
       "nombre": "Piso laminado wengué",
       "imagen": "https://picsum.photos/id/18/300/200",
       "precio": 99.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -257,6 +275,7 @@
       "nombre": "Piso de madera sapeli",
       "imagen": "https://picsum.photos/id/19/300/200",
       "precio": 189.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -271,6 +290,7 @@
       "nombre": "Piso laminado olmo",
       "imagen": "https://picsum.photos/id/20/300/200",
       "precio": 129.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -285,6 +305,7 @@
       "nombre": "Piso vinílico gris claro",
       "imagen": "https://picsum.photos/id/21/300/200",
       "precio": 59.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -299,6 +320,7 @@
       "nombre": "Piso de madera pino",
       "imagen": "https://picsum.photos/id/22/300/200",
       "precio": 119.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -313,6 +335,7 @@
       "nombre": "Piso laminado gris oscuro",
       "imagen": "https://picsum.photos/id/23/300/200",
       "precio": 74.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -327,6 +350,7 @@
       "nombre": "Piso vinílico verde",
       "imagen": "https://picsum.photos/id/24/300/200",
       "precio": 54.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -341,6 +365,7 @@
       "nombre": "Piso de madera roble rústico",
       "imagen": "https://picsum.photos/id/25/300/200",
       "precio": 159.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -355,6 +380,7 @@
       "nombre": "Piso vinílico dorado",
       "imagen": "https://picsum.photos/id/26/300/200",
       "precio": 59.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
@@ -369,6 +395,7 @@
       "nombre": "Piso laminado teca",
       "imagen": "https://picsum.photos/id/27/300/200",
       "precio": 119.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -383,6 +410,7 @@
       "nombre": "Piso de madera cedro",
       "imagen": "https://picsum.photos/id/28/300/200",
       "precio": 169.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "madera",
@@ -397,6 +425,7 @@
       "nombre": "Piso laminado haya",
       "imagen": "https://picsum.photos/id/29/300/200",
       "precio": 99.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "laminado",
@@ -411,6 +440,7 @@
       "nombre": "Piso vinílico azul",
       "imagen": "https://picsum.photos/id/30/300/200",
       "precio": 54.99,
+      "stock":10,
       "descripcion":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
       "categorias": {
         "tipo": "vinílico",
