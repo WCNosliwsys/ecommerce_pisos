@@ -5,8 +5,10 @@ export const useUser = () => {
   const navigate = useNavigate()
   const login = async (email, password) => {
     try{
-      await signInWithEmailAndPassword(auth, email, password)
-      const user = userCredential.user;
+      const credentialsUser = await signInWithEmailAndPassword(auth, email, password)
+      const user = credentialsUser.user;
+      console.log("los credenciales user son:", user)
+      console.log("los credenciales son:", credentialsUser)   
       navigate('/')
     }catch(e){
       console.log("ocurrio un error:",e)
