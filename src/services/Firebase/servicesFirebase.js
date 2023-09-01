@@ -1,4 +1,4 @@
-import { collection, doc, documentId, getDoc, getDocs, query, where, writeBatch, addDoc } from "firebase/firestore";
+import { collection, doc, documentId, getDoc, getDocs, query, where, writeBatch, addDoc, updateDoc } from "firebase/firestore";
 import { db } from "./configFirebase";
 import { auth } from "./configFirebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
@@ -83,13 +83,13 @@ export const signIn = async (email, password) => {
     if (!data.empty) {
       // La consulta tiene resultados, toma el primer documento encontrado (si esperas uno)
       const docSnap = data.docs[0];
-  
+
       // Combina el ID del documento con los datos
       const userData = {
         id: docSnap.id,
         ...docSnap.data()
       };
-  
+
       console.log('Datos del documento:', userData);
       return userData
     } else {
@@ -104,14 +104,14 @@ export const signIn = async (email, password) => {
 }
 export const signUp = async (form) => {
   try {
-    const {email,password} =form
+    const { email, password } = form
     const credentialsUser = await createUserWithEmailAndPassword(auth, email, password)
     const user = credentialsUser.user;
     delete form.password;
     const newUser = {
       uid: user.uid,
-      rol:"user",
-      ...form      
+      rol: "user",
+      ...form
     }
     //guardando en la base de datos
     const reference = collection(db, 'users')
@@ -120,7 +120,7 @@ export const signUp = async (form) => {
     console.log(user.email, user.uid)
     return {
       id: response.id,
-      ...newUser      
+      ...newUser
     }
   } catch (e) {
     console.log("ocurrio un error firebase:", e)
@@ -132,6 +132,16 @@ export const signOut = async () => {
     await auth.signOut()
   } catch (e) {
     console.log("ocurrio un error firebase:", e)
+    throw e;
+  }
+}
+
+export const updateUser = async (data, id) => {
+  try {
+    await updateDoc(doc(db, "users", id), data);
+    return true
+  } catch (e) {
+    console.log("ocurrio un error firebase actualizando:", e)
     throw e;
   }
 }
