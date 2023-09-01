@@ -1,4 +1,4 @@
-import MOCK_DATA from '../data/mock_data.json'
+import MOCK_DATA from '../../data/mock_data.json'
 
 export const pedirDatos = (id, type) => {
   if (type === 'getOne') {
