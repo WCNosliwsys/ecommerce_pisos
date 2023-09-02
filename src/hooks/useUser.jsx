@@ -5,6 +5,9 @@ import { useContext } from "react"
 export const useUser = () => {
   const {user, storeUser,cleanUser } = useContext(UserContext)
   const navigate = useNavigate()
+
+  const isAuth = Boolean(user?.email)
+
   const login = async (email, password) => {
     try{
       const miuser=await signIn( email, password)
@@ -54,6 +57,7 @@ export const useUser = () => {
     logout,
     register,
     user,
-    saveUser
+    saveUser,
+    isAuth
   }
 }

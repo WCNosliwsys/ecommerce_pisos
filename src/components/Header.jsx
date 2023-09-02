@@ -21,7 +21,7 @@ export const Header = () => {
     <header className='flex justify-between pt-5 px-10 items-center'>
       <h1>Ecommerce</h1>
       <nav className='flex justify-between gap-10'>
-        <Link to={"/"}>Inicio</Link>
+        {/* <Link to={"/"}>Inicio</Link> */}
         <Link to={"/"}>Tienda</Link>
         {user && user.rol === "admin"
           ? <>
@@ -32,7 +32,7 @@ export const Header = () => {
 
       </nav>
       <div className='flex justify-between gap-10 items-center'>
-        <img src={search} alt="" />
+        {/* <img src={search} alt="" /> */}
 
         <div className='group relative'>
           {!user
