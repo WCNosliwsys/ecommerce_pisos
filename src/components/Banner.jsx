@@ -6,7 +6,7 @@ export const Banner = ({text}) => {
       opacity: 0.75,
       backgroundImage: `url(${miBanner})`
     }} >
-     <h1 className='text-cyan-50 font-bold text-7xl'>{text}</h1>
+     <h1 className='text-cyan-50 font-bold text-7xl text-center'>{text}</h1>
     </div>
   )
 }
