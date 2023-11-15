@@ -15,6 +15,7 @@ export const pedirDatos = (id, type) => {
             id: res.id,
             ...res.data()
           }
+          console.log("wil",respuesta)
           resolve(respuesta)
         })
 
@@ -33,6 +34,7 @@ export const pedirDatos = (id, type) => {
             ...doc.data()
           }
         })
+        console.log("wilful",respuesta)
         resolve(respuesta)
       })
   })
