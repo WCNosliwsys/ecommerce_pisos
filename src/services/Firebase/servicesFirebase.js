@@ -106,6 +106,7 @@ export const signIn = async (email, password) => {
 }
 export const signUp = async (form) => {
   try {
+    console.log("wilform",form)
     const { email, password } = form
     const credentialsUser = await createUserWithEmailAndPassword(auth, email, password)
     const user = credentialsUser.user;
