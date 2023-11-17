@@ -1,10 +1,92 @@
 import React, { useState } from 'react'
 import { MiInputButton } from '../components/ui/MiInputButton'
 import { FormModal } from '../components/AdminProducto/FormModal';
+import { ProductAdminViewItem } from '../components/AdminProducto/ProductAdminViewItem';
 
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
-
+  const productos =[
+    {
+      "categorias": {
+        "tipo": "laminado",
+        "estilo": "madera",
+        "acabado": "mate",
+        "grosor": "estándar",
+        "instalacion": "clic"
+      },
+      "_id": "65545dec6a840473ce5e2b1b",
+      "code": 1,
+      "nombre": "Piso laminado roble",
+      "imagen": "https://picsum.photos/id/1/300/200",
+      "precio": 99.99,
+      "stock": 10,
+      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
+      "status": true,
+      "created_at": "2023-11-15T05:58:04.175Z",
+      "updated_at": "2023-11-15T05:58:04.175Z",
+      "__v": 0
+    },
+    {
+      "categorias": {
+        "tipo": "vinílico",
+        "estilo": "moderno",
+        "acabado": "brillante",
+        "grosor": "delgado",
+        "instalacion": "pegado"
+      },
+      "_id": "65545e066a840473ce5e2b1e",
+      "code": 2,
+      "nombre": "Piso vinílico gris",
+      "imagen": "https://picsum.photos/id/2/300/200",
+      "precio": 49.99,
+      "stock": 10,
+      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
+      "status": true,
+      "created_at": "2023-11-15T05:58:30.753Z",
+      "updated_at": "2023-11-15T05:58:30.753Z",
+      "__v": 0
+    },
+    {
+      "categorias": {
+        "tipo": "madera",
+        "estilo": "tradicional",
+        "acabado": "aceite",
+        "grosor": "premium",
+        "instalacion": "clavado"
+      },
+      "_id": "65545e986a840473ce5e2b21",
+      "code": 3,
+      "nombre": "Piso de madera natural",
+      "imagen": "https://picsum.photos/id/3/300/200",
+      "precio": 149.99,
+      "stock": 10,
+      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
+      "status": true,
+      "created_at": "2023-11-15T06:00:56.876Z",
+      "updated_at": "2023-11-15T06:00:56.876Z",
+      "__v": 0
+    },
+    {
+      "categorias": {
+        "tipo": "vinílico",
+        "estilo": "moderno",
+        "acabado": "mate",
+        "grosor": "delgado",
+        "instalacion": "pegado"
+      },
+      "_id": "65545ea96a840473ce5e2b23",
+      "code": 4,
+      "nombre": "Piso vinílico beige",
+      "imagen": "https://picsum.photos/id/4/300/200",
+      "precio": 54.99,
+      "stock": 10,
+      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
+      "status": true,
+      "created_at": "2023-11-15T06:01:13.367Z",
+      "updated_at": "2023-11-15T06:01:13.367Z",
+      "__v": 0
+    }
+  ]
   function newProducto() {
     // Aquí puedes realizar acciones al hacer clic en "Nuevo Producto"
     return;
@@ -56,35 +138,9 @@ export const AdminProductoPage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-              <td scope="row" className="px-2 py-4 text-center">
-                1
-              </td>
-              <td className="px-2 py-4 ">
-                <img  width={50} src="https://picsum.photos/id/5/200/200" alt="" />
-              </td>
-              <td className="px-2 py-4">
-                Piso laminado nogal
-              </td>
-              <td className="px-2 py-4">
-                89.99
-              </td>
-              <td className="px-2 py-4">
-                10
-              </td>
-              <td className="px-2 py-4 w-[30%]">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.
-              </td>
-              <td className="px-2 py-4 text-center ">
-                Laminado, madera, mate, estandar, clic
-              </td>
-              <td className="px-2 py-4 text-center  w-[100px]">
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">✏´Editar</a>
-                <br />
-                <br />
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">🗑Borrar</a>
-              </td>
-            </tr>
+          {productos.map((producto, index) => (
+            <ProductAdminViewItem producto={producto} key={index}  borrarProducto={()=>{}} editarProducto={()=>{}}/>
+          ))}
 
           </tbody>
         </table>
