@@ -29,7 +29,7 @@ export const Header = () => {
         <Link to={"/"} className='font-bold text-2xl'>Tienda</Link>
         {user && user.rol === "admin"
           ? <>
-            <Link to={"/"} className='font-bold text-2xl'>Administrar Productos</Link>
+            <Link to={"/adminProducto"} className='font-bold text-2xl'>Administrar Productos</Link>
           </>
           : ""
         }
