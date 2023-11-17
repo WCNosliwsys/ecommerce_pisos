@@ -131,3 +131,31 @@ export const signOut = async () => {
   // }
   console.log("se cerro sesion")
 }
+
+export const updateUser = async (data, id) => {
+  try {
+    console.log("wilbody",data)
+    const perfil= JSON.parse(localStorage.getItem('auth') || null )
+    console.log("wilperfil",perfil)
+    if(!perfil) return false
+    const response = await fetch(`http://localhost:3000/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${perfil.accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      // Manejar errores de la solicitud, puedes lanzar una excepción o manejarlos de otra manera según tu lógica.
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+
+   
+    return true
+  } catch (e) {
+    console.log("ocurrio un error  actualizando:", e)
+    throw e;
+  }
+}
