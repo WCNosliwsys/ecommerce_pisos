@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MiInputButton } from '../ui/MiInputButton'
 
-export const FormModal = ({closeModal,crearProducto}) => {
+export const FormModal = ({closeModal,crearProducto, actualizarProducto, productoToUpdate}) => {
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -16,33 +16,58 @@ export const FormModal = ({closeModal,crearProducto}) => {
     descripcion: '',
   });
 
+  useEffect(() => {
+    if (productoToUpdate) {
+      setFormData({
+        nombre: productoToUpdate.nombre,
+        imagen: productoToUpdate.imagen,
+        precio: productoToUpdate.precio,
+        stock: productoToUpdate.stock,
+        tipo: productoToUpdate.categorias.tipo,
+        estilo: productoToUpdate.categorias.estilo,
+        acabado: productoToUpdate.categorias.acabado,
+        grosor: productoToUpdate.categorias.grosor,
+        instalacion: productoToUpdate.categorias.instalacion,
+        descripcion: productoToUpdate.descripcion,
+      });
+    }
+  }, [productoToUpdate]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleNuevoProducto = () => {
-        // Crear el objeto de categorías
-        const categorias = {
-          tipo: formData.tipo,
-          estilo: formData.estilo,
-          acabado: formData.acabado,
-          grosor: formData.grosor,
-          instalacion: formData.instalacion,
-        };
-    
-        // Crear el objeto final del producto con categorías
-        const nuevoProducto = {
-          nombre: formData.nombre,
-          imagen: formData.imagen,
-          precio: formData.precio,
-          stock: formData.stock,
-          descripcion: formData.descripcion,
-          categorias: categorias,
-        };
-    // Llamada a la función crearProducto con los datos del formulario
-    crearProducto(nuevoProducto);
-
+  const handleAction = () => {
+    // Crear el objeto de categorías
+    const categorias = {
+      tipo: formData.tipo,
+      estilo: formData.estilo,
+      acabado: formData.acabado,
+      grosor: formData.grosor,
+      instalacion: formData.instalacion,
+    };
+  
+    // Crear el objeto final del producto con categorías
+    const producto = {
+      nombre: formData.nombre,
+      imagen: formData.imagen,
+      precio: formData.precio,
+      stock: formData.stock,
+      descripcion: formData.descripcion,
+      categorias: categorias,
+    };
+  
+    if (productoToUpdate) {
+      // Si hay un producto para actualizar, llamar a la función actualizarProducto
+      actualizarProducto(producto, productoToUpdate.code);
+      alert('Producto actualizado con éxito');
+    } else {
+      // Si no hay un producto para actualizar, llamar a la función crearProducto
+      crearProducto(producto);
+      alert('Producto creado con éxito');
+    }
+  
     // Limpiar el estado del formulario
     setFormData({
       nombre: '',
@@ -56,10 +81,7 @@ export const FormModal = ({closeModal,crearProducto}) => {
       instalacion: '',
       descripcion: '',
     });
-
-    // Mostrar una alerta indicando que el producto se ha creado con éxito
-    alert('Producto creado con éxito');
-
+  
     // Cerrar el modal
     closeModal();
   };
@@ -71,7 +93,7 @@ export const FormModal = ({closeModal,crearProducto}) => {
 
             <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Nuevo Producto
+              {productoToUpdate ? 'Actualizar Producto' : 'Nuevo Producto'}
               </h3>
               <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={closeModal}>
                 ❌
@@ -154,7 +176,7 @@ export const FormModal = ({closeModal,crearProducto}) => {
               </div>
               <div className='flex justify-center'>
 
-              <MiInputButton  type={'button'} onClick={handleNuevoProducto} value={"➕ Nuevo Producto"} myStyles={'w-40 my-3'} />
+              <MiInputButton  type={'button'} onClick={handleAction} value={productoToUpdate ? 'Actualizar Producto' : '➕ Nuevo Producto'} myStyles={'w-40 my-3'} />
               </div>
             </form>
           </div>

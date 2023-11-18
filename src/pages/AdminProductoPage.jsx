@@ -7,15 +7,10 @@ import { deleteProduct } from '../services/servicesProvider';
 
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
+  const [productoToUpdate, setProductoToUpdate] = useState(null);
+  const { productos, borrarProducto,crearProducto,actualizarProducto } = useProductos({ id: "", type: "getAll" })
 
-  const { productos, borrarProducto,crearProducto } = useProductos({ id: "", type: "getAll" })
-
-  function newProducto() {
-    // Aquí puedes realizar acciones al hacer clic en "Nuevo Producto"
-    return;
-  }
-
-  function llamarborrarProducto(id) {
+  function llamarBorrarProducto(id) {
     console.log("el codigo ha borrar es", id)
     const confirmacion = confirm('¿Estás seguro de que deseas borrar este producto?');
     // Lógica para borrar un producto
@@ -25,6 +20,16 @@ export const AdminProductoPage = () => {
       // Usar window.alert para mostrar un diálogo de éxito
       alert('¡Producto borrado con éxito!');
     }
+  }
+
+  function llamarActualizarProducto(producto, id) {
+    console.log("el codigo ha actualizar es", id)
+    console.log("el producto es",producto)
+       // Configurar el producto a actualizar en el estado
+       setProductoToUpdate(producto);
+
+       // Abrir el modal
+       openModal();
   }
 
   // Función para mostrar el modal
@@ -74,7 +79,7 @@ export const AdminProductoPage = () => {
           </thead>
           <tbody>
             {productos.map((producto, index) => (
-              <ProductAdminViewItem producto={producto} key={index} borrarProducto={() => llamarborrarProducto(producto.code)} editarProducto={() => { }} />
+              <ProductAdminViewItem producto={producto} key={index} borrarProducto={() => llamarBorrarProducto(producto.code)} editarProducto={()  => llamarActualizarProducto(producto, producto.code)} />
             ))}
 
           </tbody>
@@ -83,7 +88,10 @@ export const AdminProductoPage = () => {
       {isModalVisible && <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeModal}></div>}
       <div id="defaultModal" tabIndex="-1" aria-hidden="true" className={`${isModalVisible ? 'fixed' : 'hidden'
         } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full`}>
-        <FormModal closeModal={closeModal} crearProducto={crearProducto} />
+        <FormModal closeModal={() => {
+            setProductoToUpdate(null);
+            closeModal();
+          }} crearProducto={crearProducto}  actualizarProducto={actualizarProducto} productoToUpdate={productoToUpdate}/>
       </div>
     </>
 
