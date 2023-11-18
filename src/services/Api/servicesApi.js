@@ -167,5 +167,38 @@ export const updateProduct = async (data,id) => {
   return
 }
 export const deleteProduct = async (id) => {
-  return
-}
+  try {
+    // Obtener el token de autorización del almacenamiento local
+    const perfil = JSON.parse(localStorage.getItem('auth') || null);
+
+    // Verificar si hay un token de autorización
+    if (!perfil || !perfil.accessToken) {
+      throw new Error('Token de autorización no disponible');
+    }
+
+    // Construir la URL del producto con el código proporcionado
+    const url = `http://localhost:3000/products/${id}`;
+
+    // Realizar la solicitud DELETE al servidor
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${perfil.accessToken}`,
+      },
+    });
+
+    // Verificar si la solicitud fue exitosa
+    if (!response.ok) {
+      // Manejar errores de la solicitud, lanzar una excepción o manejarlos según tu lógica
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+
+    // Si la solicitud fue exitosa, puedes devolver algún resultado si es necesario
+    // Por ejemplo, puedes devolver true para indicar éxito
+    return true;
+  } catch (e) {
+    // Manejar errores, lanzar una excepción o manejarlos según tu lógica
+    console.log('Ocurrió un error al eliminar el producto:', e);
+    throw e;
+  }
+};

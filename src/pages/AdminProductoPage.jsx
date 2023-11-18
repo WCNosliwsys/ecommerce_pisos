@@ -3,15 +3,28 @@ import { MiInputButton } from '../components/ui/MiInputButton'
 import { FormModal } from '../components/AdminProducto/FormModal';
 import { ProductAdminViewItem } from '../components/AdminProducto/ProductAdminViewItem';
 import { useProductos } from '../hooks/useProductos';
+import { deleteProduct } from '../services/servicesProvider';
 
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
 
-  const { productos } = useProductos({id:"", type: "getAll" })
+  const { productos, borrarProducto } = useProductos({ id: "", type: "getAll" })
 
   function newProducto() {
     // Aquí puedes realizar acciones al hacer clic en "Nuevo Producto"
     return;
+  }
+
+  function llamarborrarProducto(id) {
+    console.log("el codigo ha borrar es", id)
+    const confirmacion = confirm('¿Estás seguro de que deseas borrar este producto?');
+    // Lógica para borrar un producto
+    if (confirmacion) {
+      borrarProducto(id);
+
+      // Usar window.alert para mostrar un diálogo de éxito
+      alert('¡Producto borrado con éxito!');
+    }
   }
 
   // Función para mostrar el modal
@@ -60,9 +73,9 @@ export const AdminProductoPage = () => {
             </tr>
           </thead>
           <tbody>
-          {productos.map((producto, index) => (
-            <ProductAdminViewItem producto={producto} key={index}  borrarProducto={()=>{}} editarProducto={()=>{}}/>
-          ))}
+            {productos.map((producto, index) => (
+              <ProductAdminViewItem producto={producto} key={index} borrarProducto={() => llamarborrarProducto(producto.code)} editarProducto={() => { }} />
+            ))}
 
           </tbody>
         </table>
