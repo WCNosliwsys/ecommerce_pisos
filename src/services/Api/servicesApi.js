@@ -161,8 +161,44 @@ export const updateUser = async (data, id) => {
 }
 
 export const createProduct = async (data) => {
-  return
-}
+  try {
+    // Obtener el token de autorización del almacenamiento local
+    const perfil = JSON.parse(localStorage.getItem('auth') || null);
+
+    // Verificar si hay un token de autorización
+    if (!perfil || !perfil.accessToken) {
+      throw new Error('Token de autorización no disponible');
+    }
+
+    // Construir la URL para la creación de productos
+    const url = 'http://localhost:3000/products';
+
+    // Realizar la solicitud POST al servidor
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${perfil.accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    // Verificar si la solicitud fue exitosa
+    if (!response.ok) {
+      // Manejar errores de la solicitud, lanzar una excepción o manejarlos según tu lógica
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+
+    // Si la solicitud fue exitosa, puedes devolver algún resultado si es necesario
+    // Por ejemplo, puedes devolver el producto creado
+    const productoCreado = await response.json();
+    return productoCreado;
+  } catch (e) {
+    // Manejar errores, lanzar una excepción o manejarlos según tu lógica
+    console.log('Ocurrió un error al crear el producto:', e);
+    throw e;
+  }
+};
 export const updateProduct = async (data,id) => {
   return
 }

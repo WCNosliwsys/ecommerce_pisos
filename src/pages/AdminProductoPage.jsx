@@ -8,7 +8,7 @@ import { deleteProduct } from '../services/servicesProvider';
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
 
-  const { productos, borrarProducto } = useProductos({ id: "", type: "getAll" })
+  const { productos, borrarProducto,crearProducto } = useProductos({ id: "", type: "getAll" })
 
   function newProducto() {
     // Aquí puedes realizar acciones al hacer clic en "Nuevo Producto"
@@ -80,21 +80,12 @@ export const AdminProductoPage = () => {
           </tbody>
         </table>
       </div>
-
-
-
       {isModalVisible && <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={closeModal}></div>}
-
-
       <div id="defaultModal" tabIndex="-1" aria-hidden="true" className={`${isModalVisible ? 'fixed' : 'hidden'
         } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full`}>
-        <FormModal closeModal={closeModal} />
+        <FormModal closeModal={closeModal} crearProducto={crearProducto} />
       </div>
-
-
-
     </>
-
 
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { pedirDatos,deleteProduct } from "../services/servicesProvider"
+import { pedirDatos,deleteProduct, createProduct } from "../services/servicesProvider"
 
 export const useProductos = ({ id, type }) => {
   const [productos, setProductos] = useState([])
@@ -36,6 +36,18 @@ export const useProductos = ({ id, type }) => {
       console.error("Error al borrar el producto:", error);
     }
   };
+  const crearProducto = async (productId) => {
+    try {
+      // Lógica para eliminar un producto (usando tu servicio API)
+      await createProduct(productId);
 
-  return { productos,borrarProducto }
+      // Después de borrar, actualiza la lista de productos
+      actualizarProductos();
+    } catch (error) {
+      // Manejo de errores, puedes mostrar mensajes de error al usuario si es necesario
+      console.error("Error al borrar el producto:", error);
+    }
+  };
+
+  return { productos,borrarProducto,crearProducto }
 }
