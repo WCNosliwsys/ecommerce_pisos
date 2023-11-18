@@ -159,3 +159,13 @@ export const updateUser = async (data, id) => {
     throw e;
   }
 }
+
+export const createProduct = async (data) => {
+  return
+}
+export const updateProduct = async (data,id) => {
+  return
+}
+export const deleteProduct = async (id) => {
+  return
+}

@@ -2,91 +2,13 @@ import React, { useState } from 'react'
 import { MiInputButton } from '../components/ui/MiInputButton'
 import { FormModal } from '../components/AdminProducto/FormModal';
 import { ProductAdminViewItem } from '../components/AdminProducto/ProductAdminViewItem';
+import { useProductos } from '../hooks/useProductos';
 
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
-  const productos =[
-    {
-      "categorias": {
-        "tipo": "laminado",
-        "estilo": "madera",
-        "acabado": "mate",
-        "grosor": "estándar",
-        "instalacion": "clic"
-      },
-      "_id": "65545dec6a840473ce5e2b1b",
-      "code": 1,
-      "nombre": "Piso laminado roble",
-      "imagen": "https://picsum.photos/id/1/300/200",
-      "precio": 99.99,
-      "stock": 10,
-      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
-      "status": true,
-      "created_at": "2023-11-15T05:58:04.175Z",
-      "updated_at": "2023-11-15T05:58:04.175Z",
-      "__v": 0
-    },
-    {
-      "categorias": {
-        "tipo": "vinílico",
-        "estilo": "moderno",
-        "acabado": "brillante",
-        "grosor": "delgado",
-        "instalacion": "pegado"
-      },
-      "_id": "65545e066a840473ce5e2b1e",
-      "code": 2,
-      "nombre": "Piso vinílico gris",
-      "imagen": "https://picsum.photos/id/2/300/200",
-      "precio": 49.99,
-      "stock": 10,
-      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
-      "status": true,
-      "created_at": "2023-11-15T05:58:30.753Z",
-      "updated_at": "2023-11-15T05:58:30.753Z",
-      "__v": 0
-    },
-    {
-      "categorias": {
-        "tipo": "madera",
-        "estilo": "tradicional",
-        "acabado": "aceite",
-        "grosor": "premium",
-        "instalacion": "clavado"
-      },
-      "_id": "65545e986a840473ce5e2b21",
-      "code": 3,
-      "nombre": "Piso de madera natural",
-      "imagen": "https://picsum.photos/id/3/300/200",
-      "precio": 149.99,
-      "stock": 10,
-      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
-      "status": true,
-      "created_at": "2023-11-15T06:00:56.876Z",
-      "updated_at": "2023-11-15T06:00:56.876Z",
-      "__v": 0
-    },
-    {
-      "categorias": {
-        "tipo": "vinílico",
-        "estilo": "moderno",
-        "acabado": "mate",
-        "grosor": "delgado",
-        "instalacion": "pegado"
-      },
-      "_id": "65545ea96a840473ce5e2b23",
-      "code": 4,
-      "nombre": "Piso vinílico beige",
-      "imagen": "https://picsum.photos/id/4/300/200",
-      "precio": 54.99,
-      "stock": 10,
-      "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati cumque amet quae molestiae fugit dolorem quia harum voluptatibus, at eligendi, consequuntur, praesentium quam ex ea magni placeat eos ipsam.",
-      "status": true,
-      "created_at": "2023-11-15T06:01:13.367Z",
-      "updated_at": "2023-11-15T06:01:13.367Z",
-      "__v": 0
-    }
-  ]
+
+  const { productos } = useProductos({id:"", type: "getAll" })
+
   function newProducto() {
     // Aquí puedes realizar acciones al hacer clic en "Nuevo Producto"
     return;

@@ -8,3 +8,6 @@ export const signIn = (email, password) =>selectedProvider.signIn(email, passwor
 export const signUp = (form) =>selectedProvider.signUp(form)
 export const signOut = () =>selectedProvider.signOut()
 export const updateUser = (data,id) =>selectedProvider.updateUser(data,id)
+export const createProduct = (data) =>selectedProvider.createProduct(data)
+export const updateProduct = (data,id) =>selectedProvider.updateProduct(data,id)
+export const deleteProduct = (id) =>selectedProvider.deleteProduct(id)
