@@ -16,6 +16,7 @@ export const CartPage = () => {
   const pagar = () => {
     const orden = {
       cliente: {
+        codUser: user.id,
         nombre: `${user.firstname} ${user.lastname}`,
         direccion: user.address,
         email:user.email,
