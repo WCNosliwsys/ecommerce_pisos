@@ -66,7 +66,7 @@ export const Header = () => {
             </ul>
           </div>
         </div>
-        {user ? <img src={heart} alt="" /> : ""}
+        {/* {user ? <img src={heart} alt="" /> : ""} */}
 
         <Link to={"/cart"}>
           {<CartWidget />}

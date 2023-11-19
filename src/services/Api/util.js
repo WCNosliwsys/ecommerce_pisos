@@ -14,8 +14,6 @@ export const transformarOrden = (order) => {
   const ordenTransformada = {
     cliente: clienteTransformado,
     items: itemsTransformados,
-    total: order.total,
-    fecha: order.fecha,
   };
 
   return ordenTransformada;
