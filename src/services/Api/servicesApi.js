@@ -308,3 +308,30 @@ export const deleteProduct = async (id) => {
     throw e;
   }
 };
+
+
+export const flistUsers = async () => {
+  try {
+    const perfil= JSON.parse(localStorage.getItem('auth') || null )
+    if(!perfil) return false
+    const response = await fetch(`http://localhost:3000/users`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${perfil.accessToken}`,
+        'Content-Type': 'application/json',
+      },
+
+    });
+
+    if (!response.ok) {
+      // Manejar errores de la solicitud, puedes lanzar una excepción o manejarlos de otra manera según tu lógica.
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+   
+    const users = await response.json();
+    return users;
+  } catch (e) {
+    console.log("ocurrio un error  actualizando:", e)
+    throw e;
+  }
+}

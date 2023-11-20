@@ -11,3 +11,8 @@ export const updateUser = (data,id) =>selectedProvider.updateUser(data,id)
 export const createProduct = (data) =>selectedProvider.createProduct(data)
 export const updateProduct = (data,id) =>selectedProvider.updateProduct(data,id)
 export const deleteProduct = (id) =>selectedProvider.deleteProduct(id)
+
+export const flistUsers = () =>selectedProvider.flistUsers()
+export const flistOrders = () =>selectedProvider.flistOrders()
+export const flistMyOrders = () =>selectedProvider.flistMyOrders()
+export const flistOrderById = (id) =>selectedProvider.flistOrders(id)
