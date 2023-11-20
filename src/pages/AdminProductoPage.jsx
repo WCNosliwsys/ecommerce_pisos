@@ -4,11 +4,12 @@ import { FormModal } from '../components/AdminProducto/FormModal';
 import { ProductAdminViewItem } from '../components/AdminProducto/ProductAdminViewItem';
 import { useProductos } from '../hooks/useProductos';
 import { deleteProduct } from '../services/servicesProvider';
+import { Banner } from '../components/Banner';
 
 export const AdminProductoPage = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
   const [productoToUpdate, setProductoToUpdate] = useState(null);
-  const { productos, borrarProducto,crearProducto,actualizarProducto } = useProductos({ id: "", type: "getAll" })
+  const { productos, borrarProducto, crearProducto, actualizarProducto } = useProductos({ id: "", type: "getAll" })
 
   function llamarBorrarProducto(id) {
     console.log("el codigo ha borrar es", id)
@@ -24,12 +25,12 @@ export const AdminProductoPage = () => {
 
   function llamarActualizarProducto(producto, id) {
     console.log("el codigo ha actualizar es", id)
-    console.log("el producto es",producto)
-       // Configurar el producto a actualizar en el estado
-       setProductoToUpdate(producto);
+    console.log("el producto es", producto)
+    // Configurar el producto a actualizar en el estado
+    setProductoToUpdate(producto);
 
-       // Abrir el modal
-       openModal();
+    // Abrir el modal
+    openModal();
   }
 
   // Función para mostrar el modal
@@ -43,6 +44,7 @@ export const AdminProductoPage = () => {
   }
   return (
     <>
+      <Banner text={"Gestionar Productos"} />
       <MiInputButton type={'button'} onClick={openModal} value={"Nuevo Producto"} myStyles={'w-40 my-3 mx-10'} />
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mx-10">
@@ -79,7 +81,7 @@ export const AdminProductoPage = () => {
           </thead>
           <tbody>
             {productos.map((producto, index) => (
-              <ProductAdminViewItem producto={producto} key={index} borrarProducto={() => llamarBorrarProducto(producto.code)} editarProducto={()  => llamarActualizarProducto(producto, producto.code)} />
+              <ProductAdminViewItem producto={producto} key={index} borrarProducto={() => llamarBorrarProducto(producto.code)} editarProducto={() => llamarActualizarProducto(producto, producto.code)} />
             ))}
 
           </tbody>
@@ -89,9 +91,9 @@ export const AdminProductoPage = () => {
       <div id="defaultModal" tabIndex="-1" aria-hidden="true" className={`${isModalVisible ? 'fixed' : 'hidden'
         } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full`}>
         <FormModal closeModal={() => {
-            setProductoToUpdate(null);
-            closeModal();
-          }} crearProducto={crearProducto}  actualizarProducto={actualizarProducto} productoToUpdate={productoToUpdate}/>
+          setProductoToUpdate(null);
+          closeModal();
+        }} crearProducto={crearProducto} actualizarProducto={actualizarProducto} productoToUpdate={productoToUpdate} />
       </div>
     </>
 

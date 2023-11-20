@@ -2,13 +2,14 @@ import React from 'react'
 import { useProductos } from '../hooks/useProductos'
 import { UsersViewItem } from '../components/AdminUser/UsersViewItem'
 import { useAdminStats } from '../hooks/useAdminStats'
+import { Banner } from '../components/Banner'
 
 export const AdminUsuariosPage = () => {
   const { data } = useAdminStats("listUsers")
 
   return (
     <>
-
+<Banner text={"Gestionar Usuarios"} />
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mx-10 my-5">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
