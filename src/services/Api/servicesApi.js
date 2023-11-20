@@ -1,11 +1,11 @@
 import { transformarOrden } from "./util"
-
+const dominio = 'http://localhost:3000'
 export const pedirDatos = (id, type) => {
 
   if (type === 'getOne') {
     return new Promise(async (resolve, reject) => {
 
-      const response = await fetch(`http://localhost:3000/products/${id}`)
+      const response = await fetch(`${dominio}/products/${id}`)
       const data = await response.json()
       const dataWithId = { ...data, id: data.code};
       resolve(dataWithId)
@@ -16,7 +16,7 @@ export const pedirDatos = (id, type) => {
       resolve([])
     }
     else{
-      const response = await fetch(`http://localhost:3000/products`)
+      const response = await fetch(`${dominio}/products`)
       const data = await response.json()
       const dataWithId = data.map(item => {
         return { ...item, id: item.code };
@@ -41,7 +41,7 @@ export const createOrder= async (order)=>{
     }
     const data = transformarOrden(order)
     // Construir la URL para la creación de productos
-    const url = 'http://localhost:3000/orders';
+    const url = `${dominio}/orders`;
 
     // Realizar la solicitud POST al servidor
     const response = await fetch(url, {
@@ -74,7 +74,7 @@ export const signUp = async (form) => {
   try {
     console.log("wilform", form);
 
-    const response = await fetch('http://localhost:3000/auth/signup', {
+    const response = await fetch(`${dominio}/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export const signUp = async (form) => {
     }
     const body = {email:form.email,password:form.password}
 
-    const auth = await fetch('http://localhost:3000/auth/signin', {
+    const auth = await fetch(`${dominio}/auth/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ export const signIn = async (email, password) => {
   try {
     const body = {email,password}
 
-    const response = await fetch('http://localhost:3000/auth/signin', {
+    const response = await fetch(`${dominio}/auth/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export const signIn = async (email, password) => {
       'Content-Type': 'application/json',
     };
 
-    const user = await fetch(`http://localhost:3000/users/${email}`, {
+    const user = await fetch(`${dominio}/users/${email}`, {
       headers: headersWithToken,
     });
 
@@ -172,7 +172,7 @@ export const updateUser = async (data, id) => {
     const perfil= JSON.parse(localStorage.getItem('auth') || null )
     console.log("wilperfil",perfil)
     if(!perfil) return false
-    const response = await fetch(`http://localhost:3000/users/update_perfil`, {
+    const response = await fetch(`${dominio}/users/update_perfil`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${perfil.accessToken}`,
@@ -205,7 +205,7 @@ export const createProduct = async (data) => {
     }
 
     // Construir la URL para la creación de productos
-    const url = 'http://localhost:3000/products';
+    const url = `${dominio}/products`;
 
     // Realizar la solicitud POST al servidor
     const response = await fetch(url, {
@@ -244,7 +244,7 @@ export const updateProduct = async (data,id) => {
     }
 
     // Construir la URL para la creación de productos
-    const url = `http://localhost:3000/products/${id}`;
+    const url = `${dominio}/products/${id}`;
 
     // Realizar la solicitud POST al servidor
     const response = await fetch(url, {
@@ -283,7 +283,7 @@ export const deleteProduct = async (id) => {
     }
 
     // Construir la URL del producto con el código proporcionado
-    const url = `http://localhost:3000/products/${id}`;
+    const url = `${dominio}/products/${id}`;
 
     // Realizar la solicitud DELETE al servidor
     const response = await fetch(url, {
@@ -314,7 +314,7 @@ export const flistUsers = async () => {
   try {
     const perfil= JSON.parse(localStorage.getItem('auth') || null )
     if(!perfil) return false
-    const response = await fetch(`http://localhost:3000/users`, {
+    const response = await fetch(`${dominio}/users`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${perfil.accessToken}`,
@@ -339,7 +339,7 @@ export const flistOrders = async () => {
   try {
     const perfil= JSON.parse(localStorage.getItem('auth') || null )
     if(!perfil) return false
-    const response = await fetch(`http://localhost:3000/orders`, {
+    const response = await fetch(`${dominio}/orders`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${perfil.accessToken}`,
@@ -364,7 +364,7 @@ export const flistMyOrders = async () => {
   try {
     const perfil= JSON.parse(localStorage.getItem('auth') || null )
     if(!perfil) return false
-    const response = await fetch(`http://localhost:3000/orders/mis_ordenes`, {
+    const response = await fetch(`${dominio}/orders/mis_ordenes`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${perfil.accessToken}`,
@@ -391,7 +391,7 @@ export const flistOrderById = async (id) => {
     console.log("filtrandoooooooo")
     const perfil= JSON.parse(localStorage.getItem('auth') || null )
     if(!perfil) return false
-    const response = await fetch(`http://localhost:3000/orders/${id}`, {
+    const response = await fetch(`${dominio}/orders/${id}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${perfil.accessToken}`,
