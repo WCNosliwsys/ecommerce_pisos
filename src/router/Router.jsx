@@ -7,6 +7,7 @@ import { Registro } from '../pages/Registro'
 import { Perfil } from '../pages/Perfil'
 import PrivateRoute from './PrivateRoute'
 import { AdminProductoPage } from '../pages/AdminProductoPage'
+import { MisOrdenesPage } from '../pages/MisOrdenesPage'
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
       </Route>
 
       <Route path='/adminProducto' element={<AdminProductoPage />} />
+      <Route path='/mis_ordenes' element={<MisOrdenesPage />} />
       <Route path='/login' element={<Login />} />
       <Route path='/registro' element={<Registro />} />
       <Route path='/tienda' element={<Tienda />} />

@@ -27,12 +27,35 @@ export const Header = () => {
       <nav className='flex justify-between gap-10'>
         {/* <Link to={"/"}>Inicio</Link> */}
         <Link to={"/"} className='font-bold text-2xl'>Tienda</Link>
-        {user && user.rol === "admin"
-          ? <>
-            <Link to={"/adminProducto"} className='font-bold text-2xl'>Administrar Productos</Link>
+        {user && user.rol === "admin" ? (
+          <>
+            <div className="group relative">
+              <span className="font-bold text-2xl cursor-pointer">
+                Gestionar
+              </span>
+
+              <div className="hidden absolute group-hover:block   bg-white rounded-lg shadow w-32  z-10">
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-400">
+                  <li>
+                    <Link to={"/adminProducto"} className="block px-4 py-2 hover:bg-gray-100 ">
+                      Gestionar Productos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"/adminOrdenes"} className="block px-4 py-2 hover:bg-gray-100 ">
+                      Gestionar Ordenes
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"/adminUsuarios"} className="block px-4 py-2 hover:bg-gray-100 ">
+                      Gestionar Usuarios
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </>
-          : ""
-        }
+        ) : null}
 
       </nav>
       <div className='flex justify-between gap-10 items-center'>
@@ -57,6 +80,9 @@ export const Header = () => {
                 : <>
                   <li>
                     <Link to={"/perfil"} className="block px-4 py-2 hover:bg-gray-100 ">Mi Perfil </Link>
+                  </li>
+                  <li>
+                    <Link to={"/mis_ordenes"} className="block px-4 py-2 hover:bg-gray-100 ">Mis Ordenes</Link>
                   </li>
                   <div className="py-1 ">
                     <div className="block px-4 py-2 text-sm  hover:bg-gray-100 cursor-pointer" onClick={handleLogout} >Cerrar Sesion</div>
