@@ -8,6 +8,9 @@ import { Perfil } from '../pages/Perfil'
 import PrivateRoute from './PrivateRoute'
 import { AdminProductoPage } from '../pages/AdminProductoPage'
 import { MisOrdenesPage } from '../pages/MisOrdenesPage'
+import { AdminUsuariosPage } from '../pages/AdminUsuariosPage'
+import { AdminOrdenesPage } from '../pages/AdminOrdenesPage'
+import { DetalleOrdenPage } from '../pages/DetalleOrdenPage'
 
 const Router = () => {
   return (
@@ -18,6 +21,9 @@ const Router = () => {
       </Route>
 
       <Route path='/adminProducto' element={<AdminProductoPage />} />
+      <Route path='/adminOrdenes' element={<AdminOrdenesPage />} />
+      <Route path='/adminOrdenes/:id' element={<DetalleOrdenPage />} />
+      <Route path='/adminUsuarios' element={<AdminUsuariosPage />} />
       <Route path='/mis_ordenes' element={<MisOrdenesPage />} />
       <Route path='/login' element={<Login />} />
       <Route path='/registro' element={<Registro />} />
