@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { pedirDatos,deleteProduct, createProduct, updateProduct, flistUsers } from "../services/servicesProvider"
+import { pedirDatos,deleteProduct, createProduct, updateProduct, flistUsers, flistOrders } from "../services/servicesProvider"
 
 export const useAdminStats = (type,id) => {
   const [data, setData] = useState([])
@@ -9,6 +9,10 @@ export const useAdminStats = (type,id) => {
         case "listUsers":
           const userList = await flistUsers();
           setData(userList);
+          break;
+        case "listOrders":
+          const orderList = await flistOrders();
+          setData(orderList);
           break;
         // case "getOrder":
         //   const orderData = await pedirDatos(id, type);

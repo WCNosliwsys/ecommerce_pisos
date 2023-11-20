@@ -335,3 +335,28 @@ export const flistUsers = async () => {
     throw e;
   }
 }
+export const flistOrders = async () => {
+  try {
+    const perfil= JSON.parse(localStorage.getItem('auth') || null )
+    if(!perfil) return false
+    const response = await fetch(`http://localhost:3000/orders`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${perfil.accessToken}`,
+        'Content-Type': 'application/json',
+      },
+
+    });
+
+    if (!response.ok) {
+      // Manejar errores de la solicitud, puedes lanzar una excepción o manejarlos de otra manera según tu lógica.
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+   
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    console.log("ocurrio un error  actualizando:", e)
+    throw e;
+  }
+}
