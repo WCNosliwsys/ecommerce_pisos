@@ -1,5 +1,6 @@
 import { transformarOrden } from "./util"
-const dominio = 'http://localhost:3000'
+// const dominio = 'http://localhost:3000'
+const dominio = 'https://yesica-chui-chalco.xyz/app4'
 export const pedirDatos = (id, type) => {
 
   if (type === 'getOne') {
